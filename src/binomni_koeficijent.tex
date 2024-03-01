@@ -1,0 +1,135 @@
+\section{Binomni koeficijent}
+
+Izražava na koliko se načina može odabrati k od n odabira bez ponavljanja, tj.
+broj $k$-kombinacija $n$-članog skupa.
+
+$$
+{{n}\choose{k}} = \frac{n!}{(n-k)!k!}
+$$
+
+\subsection{Pascalov trokut}
+
+Pascalov trokut predstavlja rješenja za binomne koeficijente. Svaki broj u
+trokutu je zbroj dva broja iznad njega.
+
+\begin{tabular}{rccccccccc}
+    $n=0$:&    &    &    &    &  1\\\noalign{\smallskip\smallskip}
+    $n=1$:&    &    &    &  1 &    &  1\\\noalign{\smallskip\smallskip}
+    $n=2$:&    &    &  1 &    &  2 &    &  1\\\noalign{\smallskip\smallskip}
+    $n=3$:&    &  1 &    &  3 &    &  3 &    &  1\\\noalign{\smallskip\smallskip}
+    $n=4$:&  1 &    &  4 &    &  6 &    &  4 &    &  1\\\noalign{\smallskip\smallskip}
+\end{tabular}
+
+Vrijednost $n$-tog reda (ranga) i $k$-tog stupca je jednaka $\binom{n}{k}$. S
+tom notacijom je konstrukciju moguće zapisati i kao:
+
+$$
+\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}
+$$
+
+\subsection{Binomni teorem}
+
+Binomni teorem opisuje algebarsko proširenje eksponenta binoma. Prema teoremu,
+moguće je proširiti polinom oblika $(x+y)^n$ u zboj izraza oblika $ax^by^c$,
+gdje su eksponenti $b$ i $c$ pozitivni cijeli brojevi za koje vrijedi $b+c=n$, a
+koeficijent $a$ svakog izraza je određeni pozivni cijeli broj sukladan
+odgovarajućem stupcu u pascalovom trokutu
+
+Na primjer, za $n=4$:
+
+$$
+(x+y)^4=x^4+4x^3y+6x^2y^2+4xy^3+y^4
+$$
+
+U primjeru možemo uočiti da koeficijent $a$ svakog člana prati vrijednosti
+stupca na pascalovom trokutu u rangu jednakom eksponentu ($n=4$).
+
+\begin{theorem}[binomni teorem]
+    Neka je $n$ prirodan broj i neka su $x$ i $y$ kompleksni brojevi. Tada je
+
+    \begin{align*}
+        (x+y)^n &= x^n + \binom{n}{1}x^{n-1}y+\dots+\binom{n}{n-1}xy^{n-1}+y^n\\
+        &=\sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k
+    \end{align*}
+\end{theorem}
+
+\begin{example}
+    Dokažite da je $\displaystyle\sum_{i=0}^{n} \binom{n}{i} = 2^n$.
+\end{example}
+
+\subsection{Vandermondova konvolucija}
+\textbf{Vandermondova konvolucija} se često koristi za kombinatorne dokaze i rješavanje
+sustava jednadžbi u linearnoj algebri.
+
+Primjenjuje se za brojanje kombinacija različitih objekata. Izraz
+$$
+    \binom{m+n}{r} = \sum_{k=0}^{r} \binom{n}{k}\binom{m}{r-k}
+$$
+tvrdi da bilo koja od $k$ kombinacija objekata iz grube od $m+n$ objekata mora
+imati nekih $0 \leq k \leq r$ objekata iz grupe od $m$ objekata i preostalih $r-k$
+objekata iz grube od $n$ objekata.
+
+\begin{theorem}[vandermondova konvolucija]
+    \center
+    \begin{tabular}{rll}
+        $\displaystyle\binom{m}{r}+\binom{n}{1}\binom{m}{r-1}+\dots+\binom{n}{r}$ &= $\displaystyle\sum_{k=0}^{r} \binom{n}{k}\binom{m}{r-k}$ &= $\displaystyle\binom{m+n}{r}$\\
+        $\displaystyle\binom{n}{0}\binom{m}{0}+\binom{n}{1}\binom{m}{1}+\dots+\binom{n}{n}\binom{m}{n}$ &= $\displaystyle\sum_{k=0}^{n} \binom{n}{k}\enspace\,\binom{m}{k}$ &= $\displaystyle\binom{m+n}{n}$
+    \end{tabular}
+\end{theorem}
+
+Iz vandermondove konvolucije također dobivamo i korolar koji govori da je broj
+načina na koji možemo odabrati $n$ objekata iz dvije grupe od $n$ objekata
+jednak zbroju kvadrata načina na koje možemo odabrati $0 \geq k \geq n$ objekata
+iz grupe od $n$ objekata.
+
+\begin{corollary}
+    $$
+        \sum_{k=0}^{n} \binom{n}{k}^2 = \binom{2n}{n}
+    $$
+\end{corollary}
+
+\begin{example}
+    Izračunajte $\displaystyle \binom{25}{0}\binom{27}{20}+\binom{25}{1}\binom{27}{19}+\dots+\binom{25}{19}\binom{27}{1}+\binom{25}{20}\binom{27}{0}$.
+\end{example}
+
+$$
+    \binom{25}{0}\binom{27}{20}+\binom{25}{1}\binom{27}{19}+\dots+\binom{25}{19}\binom{27}{1}+\binom{25}{20}\binom{27}{0} = \sum_{k=0}^{20} \binom{15}{k}\binom{27}{20-k} = \binom{27+25}{20} \approx 1.2599 \times 10^{14}
+$$
+
+
+\subsection{Unimodalnost}
+
+Ako je $n$ paran prirodan broj vrijedi:
+$$
+\binom{n}{0}<\binom{n}{1}<\dots<\binom{n}{\frac{n}{2}},\, \binom{n}{\frac{n}{2}}>\dots>\binom{n}{n-1}>\binom{n}{n}
+$$
+
+\noindent
+Ako je $n$ neparan prirodan broj vrijedi:
+$$
+\binom{n}{0}<\binom{n}{1}<\dots<\binom{n}{\frac{n-1}{2}} = \binom{n}{\frac{n+1}{2}}>\dots>\binom{n}{n-1}>\binom{n}{n}
+$$
+
+
+\begin{example}
+    $2n - 1$ studenata želi osnovati svoju delegaciju od $k$ studenata. Za $k = 40$ je
+    broj mogućih različitih odabira članova delegacije najveći. Odredite $n$.
+\end{example}
+
+Zbog unimodalnosti binomnog koeficijenta znamo da gornji broj mora biti jednak
+$k\cdot 2 \pm 1$, jer se radi o neparnom broju studenata te je
+$\dbinom{n}{\frac{n\pm 1}{2}}$ najveći binom. Dakle broj studenata je $79$.
+
+\subsection{Zadaci}
+
+\begin{example}
+    U binomnom razvoju $\left({1\over x} + x\right)^n$ koeficijent drugog člana
+    manji je od koeficijenta trećeg člana za 35. Odredite, ako postoji, član
+    razvoja koji ne sadrži $x$.
+\end{example}
+
+\begin{example}
+    Izračunajte vrijednost Möbiusove funkcije za sve uređene parove elemenata
+    skupa $X=\{1,2,3,5,9,12\}$, ako je uređaj na skupu dan relacijom "biti
+    djeljitelj od".
+\end{example}

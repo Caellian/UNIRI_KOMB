@@ -1,0 +1,55 @@
+\section{Totalna zbrka}
+
+\textbf{Totalna zbrka} ili dearanžman je parmutacija elemenata skupa u kojoj se
+niti jedan element ne pojavljuje u svojoj originalnoj poziciji, tj. nema fiksnih
+točaka.
+
+\bigskip
+\noindent
+$D_n$ je broj dearanžmana ili totalne zbrke nekog skupa. Također se naziva i Montmortov broj. Druge oznake su $!n$, $n\text{!`}$.
+
+\begin{theorem}
+    Za prirodan broj $n$ vrijedi:
+    $$
+        D_n = \begin{Bmatrix}
+            (n-1) \cdot (D_{n - 1} + D_{n - 2}),&n \geq 2\\
+            0,&n = 1\\
+            1,&n = 0
+        \end{Bmatrix} = n! \left(1-\frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \dots + (-1)^n \frac{1}{n!}\right).
+    $$
+\end{theorem}
+
+\textbf{Fiksna točka} je točka čija pozicija ne mijenja prilikom preslikavanja.
+
+\begin{example}
+    Neka $f:S\to T$. Element $x\in S$ je fiksna točka funkcije ako vrijedi $f(x)
+    = x$.
+
+    \begin{enumerate}
+        \item Koliko ima permutacija skupa $\mathbb{N}_n$ takvih da su sve točke
+        skupa $\mathbb{N}_n$ fiksne točke te permutacije?
+        \item Koliko ima permutacija skupa $\mathbb{N}_n$ takvih da je 1 filsna
+        točka te permutacije?
+        \item Koliko ima permutacija skupa $\mathbb{N}_n$ bez fiksnih točaka?
+        \begin{itemize}
+            \item $D_0 \coloneq 1$
+            \item $D_1 = ?$
+            \item $D_2 = ?$
+        \end{itemize}
+    \end{enumerate}
+\end{example}
+
+\begin{enumerate}
+    \item Postoji jedna takva permutacija, i u njoj je redoslijed elemenata
+    jednak originalnom skupu $S$. U tom slučaju vrijedi $f \equiv \mathrm{I} : S
+    \to S$.
+    \item Postoji $n \cdot (n - 1)!$ takvih permutacija. Možemo odabrati bilo
+    koji od $n$ elemenata da bude fiksna točka, a preostalih $n-1$ elemenata
+    možemo permutirati na $(n-1)!$ načina.
+    \item Broj permutacija bez fiksnih točaka je jednak $D_n$ po gornjoj formuli.
+    \begin{itemize}
+        \item $D_0 \coloneq 1$
+        \item $D_1 = 0$
+        \item $D_2 = 1$ (zamjena dva elementa)
+    \end{itemize}
+\end{enumerate}

@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage[a4paper, margin={1.5cm, 2cm}]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage[croatian]{babel}
+
+\usepackage{lmodern}
+\usepackage{fontawesome}
+
+\usepackage{unicode-math}
+
+\usepackage{mathtools}
+\usepackage{cancel}
+
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{xparse}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{hyperref}
+
+\usepackage{fancyvrb}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
+\hypersetup{
+    pdfborderstyle={/S/U/W 1},
+    linkbordercolor=orange,
+    citebordercolor=green,
+    filebordercolor=magenta,
+    urlbordercolor=blue
+}
+
+\include{_labels}
+\include{_boxes}
+\include{_pygments}
+\include{_algorithms}
+
+\newcommand{\multicomb}[2]{\genfrac{\langle}{\rangle}{0pt}{}{\hspace{0.2em}#1\hspace{0.2em}}{\hspace{0.2em}#2\hspace{0.2em}}}
+\newcommand{\dmulticomb}[2]{\genfrac{\langle}{\rangle}{0pt}{0}{\hspace{0.2em}#1\hspace{0.2em}}{\hspace{0.2em}#2\hspace{0.2em}}}
+
+\title{Skripta: Kombinatorika}
+\author{Tin Švagelj}
+
+\begin{document}

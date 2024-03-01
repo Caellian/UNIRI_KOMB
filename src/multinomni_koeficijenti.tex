@@ -1,0 +1,58 @@
+\section{Multiskupovi}
+
+\textbf{Multiskup} $M$ na skupu $S$ se sastoji od skupa $S$ i funkcije
+$m:S\to\mathbb{N}_0$.
+
+\begin{itemize}
+    \item $M = (S, m)$
+    \item $m(x),\, x\in S$, se zove \textbf{multiplicitet} ili \textbf{kratnost} elemenata $x$
+    \item $M = \{m(x) \cdot x \,|\, x \in S\}$
+\end{itemize}
+
+\begin{example}
+    $M = \{x,x,x,y,y,y,y,z,t,t\} = \{3\cdot x, 4 \cdot y, 1 \cdot z, 2 \cdot t\}$
+\end{example}
+
+\begin{example}
+    $M = \{\infty \cdot x, \infty \cdot y, \infty \cdot z\}$
+\end{example}
+
+Ako je $m(x) = 1$ za svaki $x\in S$, onda je $M$ skup.
+
+\bigskip
+Neka su $M_1 = (S, m_1)$ i $M_2 = (S, m_2)$ multiskupovi.
+
+$M_1$ je \textbf{podmultiskup} multiskupa $M_2$ ako i samo ako je $m_1(x) \leq m_2(x),\, \forall x \in S$.
+
+\begin{example}
+    Je li $M_1 = \{2\cdot x, 3 \cdot y, 1 \cdot z, 1 \cdot t\}$ podmultiskup
+    multiskupa $M_2 = \{3\cdot x, 3 \cdot y, 2 \cdot z\}$?
+\end{example}
+
+$M_1$ nije podmultiskup multiskupa $M_2$ jer sadrži $t$ koji se ne nalazi u
+multiskupu $M_2$.
+
+\subsection{Multinomni koeficijenti}
+
+Multinomni koeficijent predstavlja broj permutacija multiskupa $M = \{n_1\cdot x_1, x_2 \cdot x_2, \dots, n_k \cdot x_k\}$
+
+\begin{gather*}
+    \binom{n}{n_1, n_2, \dots, n_k} = \frac{n!}{n_1!n_2!\dots n_k!}\\
+    n_1+n_2+\dots+n_k = n
+\end{gather*}
+
+\begin{theorem}[multinomni teorem]
+    Neka su $k$ i $n$ prirodni brojevi i $x_1, x_2, \dots, x_k$ kompleksni
+    brojevi. Tada vrijedi
+    $$
+        (x_1 + \dots + x_k)^n = \sum_{\substack{n_1+n_2+\dots n_k = n\\n_1, n_2, \dots, n_k \geq 0}} \binom{n}{n_1, n_2, \dots, n_k} \prod_{t=1}^{k} x_t^{n_t}\,.
+    $$
+\end{theorem}
+
+\begin{theorem}[broj različitih pribrojnika]
+    Broj različitih pribrojnika u razvoju izraza $(x_1 + \dots + x_k)^n$ po
+    multinomnom teoremu je
+    $$
+        \binom{n + k - 1}{n}\,.
+    $$
+\end{theorem}

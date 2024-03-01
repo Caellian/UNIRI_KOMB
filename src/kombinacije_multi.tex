@@ -1,0 +1,62 @@
+\subsection{Kombinacije multiskupova}
+
+Neka je $M = (S, m)$ multiskup.
+Podmultiskup multiskupa $M$ koji ima $r$ elemenata je \textbf{$\mathbf{r}$-kombinacija} multiskupa $M$ (kombinacija $r$-tog razreda s ponavljanjem).
+
+\begin{example}
+    $\{1 \cdot b, 3 \cdot p, 1 \cdot c\}$ je $5$-kombinacija multiskupa $\{5
+    \cdot b, 10 \cdot p, 5 \cdot c\}$.
+\end{example}
+
+\begin{example}
+    Na koliko načina možemo odabrati pet kuglica od 20 kuglica u različitim
+    bojama?
+\end{example}
+
+\begin{example}
+    Na koliko načina možemo odabrati pet kuglica od 20 kuglica, od kojih je 5
+    bijele boje, 10 plave boje i 5 crvene boje?
+\end{example}
+
+\begin{theorem}
+    Neka je $M = \{n_1 \cdot x_1, n_2 \cdot x_2, \dots, n_k \cdot x_k\}$
+    multiskup. Tada je broj podmultiskupova multiskupa $M$ jednak
+    $$
+        (n_1 + 1) \cdot (n_2 + 1) \cdot \dots \cdot (n_k + 1).
+    $$
+\end{theorem}
+
+\begin{example}
+    Odredite broj podskupova skupa $S$ od $n$ elementa upotrebom prethodnog
+    teorema.
+\end{example}
+
+\subsubsection{Kombinacije s beskonačnim kratnostima}
+
+\begin{theorem}
+    Neka je $M=\{\infty \cdot x_1, \infty \cdot x_2, \dots, \infty \cdot x_n\}$
+    multiskup i neka je $r$ prirodan broj. Tada je broj $r$-kombinacija
+    multiskupa $M$ jednak
+    $$
+        \multicomb{n}{r} = \binom{n + r - 1}{r}
+    $$
+\end{theorem}
+
+\begin{example}
+    Koliko ima nepadajućih nizova duljine $r$ čiji su članovi iz skupa
+    $\{1,2,\dots,n\}$?
+\end{example}
+
+Možemo li odrediti broj podmultiskupova skupa $M=\{\infty \cdot x_1, \infty \cdot x_2, \dots, \infty \cdot x_n\}$?
+
+\subsubsection{Kombinacije s konačnim kratnostima}
+
+\begin{theorem}
+    Neka je $M=\{n_1 \cdot x_1, n_2 \cdot x_2, \dots, n_k \cdot x_n\}$
+    multiskup i neka je $r$ prirodan broj. Tada je broj $r$-kombinacija
+    multiskupa $M$ jednak
+    $$
+        \multicomb{n_1,n_2,\dots,n_k}{r} = \sum_{s=0}^{k} (-1)^s \sum_{1 \leq i_1 \leq \dots \leq i_s \leq k} \binom{k+r-n_{i_1}-n_{i_2}-\dots-n_{i_s}-s-1}{k-1}
+    $$
+\end{theorem}
+

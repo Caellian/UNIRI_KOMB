@@ -1,0 +1,74 @@
+\subsection{Permutacije multiskupova}
+
+Neka je $M = (S, m)$ multiskup. Uređena r-torka $(x_1, x_2, \dots, x_r)$ je
+\textbf{$\mathbf{r}$-permutacija} multiskupa $M$ (varijacija $r$-tog razreda s
+ponavljanjem).
+
+Ako je broj elemenata multiskupa $M$ jednak $n$, onda se $n$-permutacija od $M$
+zove permutacija multiskupa $M$.
+
+\begin{example}
+    Koliko ima nenegativnih cijelih brojeva koji imaju pet ili četiri znamenke
+    zakvih da su sve znamenke međusobno različite?
+\end{example}
+
+\begin{example}
+    Koliko ima nenegativnih cijelih brojeva koji imaju pet ili manje znamenki?
+\end{example}
+
+\subsubsection{Permutacije s beskonačnim kratnostima}
+
+\begin{theorem}
+    Neka je $M = \{\infty \cdot x_1, \infty \cdot x_2, \dots, \infty \cdot
+    x_n\}$ multiskup i neka je $r$ prirodan broj. Tada je broj $r$-permutacija
+    multiskupa $M$ jednak $n^r$.
+\end{theorem}
+
+\begin{example}
+    Riječ "KOMBINATORIKA" je 13-permutacija multiskupa $M = \{\infty \cdot
+    \text{A}, \infty \cdot \text{B}, \dots, \infty \cdot \text{Ž}\}$.
+\end{example}
+
+\begin{example}
+    Odredite broj podskupova skupa $S$ od $n$ elemenata upotrebom prethodnog
+    teorema.
+\end{example}
+
+Multiplicitet svih elemenata $n$ skupa $S$ je jednak $1$ (tj. $m(x) = 1,\, \forall x \in S$). Broj podskupova skupa $S$ je jednak $\sum_{r=0}^{n} n^r = n!\,$.
+
+\bigskip
+Permutacije multiskupa $M$ s beskonačnom kratnosti nije moguće prebrojati jer ih
+je beskonačno mnogo.
+
+\subsubsection{Permutacije s konačnim kratnostima}
+
+\begin{theorem}
+    Neka je $M = \{n_1 \cdot x_1, n_2 \cdot x_2, \dots, n_k \cdot x_n\}$
+    multiskup i neka je $n_1+n_2+\dots+n_k=n$. Tada je broj permutacija
+    multiskupa $M$ jednak
+    $$
+        \binom{n}{n_1, n_2, \dots, n_k} = \frac{n!}{n_1!n_2! \dots n_k!}
+    $$
+\end{theorem}
+
+\begin{example}
+    Riječ "KOMBINATORIKA" je permutacija multiskupa $M = \{2 \cdot \text{A}, 2
+    \cdot \text{K}, 2 \cdot \text{O}, 2 \cdot \text{I}, 1 \cdot \text{M}, 1
+    \cdot \text{B}, 1 \cdot \text{N}, 1 \cdot \text{T}, 1 \cdot \text{R} \}$.
+\end{example}
+
+\begin{example}
+    Koliko ima permutacija skupa $M = \{2 \cdot \text{A}, 2 \cdot \text{K}, 2
+    \cdot \text{O}, 2 \cdot \text{I}, 1 \cdot \text{M}, 1 \cdot \text{B}, 1
+    \cdot \text{N}, 1 \cdot \text{T}, 1 \cdot \text{R} \}$?
+\end{example}
+
+Multiskup $M$ ima
+$
+\displaystyle\binom{13}{2,2,2,2,1,1,1,1,1} = \frac{13!}{2!2!2!2!1!1!1!1!1!} = \frac{13!}{16} = 389188800
+$
+permutacija.
+
+\bigskip
+$r$-permutacije (i permutacije) konačnog multiskupa $M$ je moguće prebrojati jer
+multiskup ima konačan broj elemenata.

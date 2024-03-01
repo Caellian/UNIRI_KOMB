@@ -1,0 +1,81 @@
+\section{Dirichletovo načelo}
+
+\subsection{Slaba forma}
+
+\begin{theorem}
+    Neka je $n$ prirodan broj. Ako $n+1$ predmeta bilo kako rasporedimo u $n$
+    kutija, onda barem jedna kutija sadrži barem dva predmeta.
+\end{theorem}
+
+\begin{example}
+    Neka su $S$ i $T$ konačni skupovi takvi da je $|S| > |T|$ i neka je $f:S\to
+    T$ funkcija. Može li $f$ biti injektivna funkcija?
+\end{example}
+
+Funkcija $f$ mora biti surjektivna jer vrijedi $|S| > |T|$. Kako bi funkcija
+bila injektivna, mora vrijediti $|S| \leq |T|$.
+
+\begin{example}
+    Na otvaranje nove izložbe poznatog slikara okupilo se društvo od 200 osoba.
+    Dokažite da među prisutnima ima barem dvije osobe s istim brojem poznanika
+    na izložbi.
+\end{example}
+
+\begin{example}
+    \begin{itemize}
+        \item Ako $2n+1$ predmet raspoređujemo u $n$ kutija, tada barem jednak
+        broj kutija sadrži barem $\underline{\qquad}$ predmeta.
+        \item Ako $3n+1$ predmet raspoređujemo u $n$ kutija, tada barem jednak
+        broj kutija sadrži barem $\underline{\qquad}$ predmeta.
+        \item Ako $n(k-1)+1$ predmet raspoređujemo u $n$ kutija, tada barem
+        jednak broj kutija sadrži barem $\underline{\qquad}$ predmeta.
+    \end{itemize}
+\end{example}
+
+\subsection{Jaka forma}
+
+\begin{theorem}
+    Neka su $n$ i $m$ prirodni brojevi. Ako je $m$ predmeta raspoređeno u $n$
+    kutija, onda barem jedna kutija sadrži barem $\lfloor \frac{m-1}{n} \rfloor
+    + 1$ predmeta.
+\end{theorem}
+
+\begin{example}
+    Pismenom ispitu iz Kombinatorike pristupilo je 30 studenata. Rješavajući
+    zadatke niti jedan student nije napravio više od šest grešaka. Dokažite da
+    je barem pet studenata imao jednak broj grešaka na tom ispitu.
+\end{example}
+
+\subsection{Opća forma}
+
+\begin{theorem}
+    Neka su $n, r_1, \dots, r_n$ prirodni brojevi. Ako je
+    $r_1+r_2+\dots+r_n-n+1$ predmeta raspoređeno u $n$ kutija $K_1, K_2, \dots,
+    K_n$, onda barem jedna kutija $K_i$ sadrži barem $r_i$ predmeta.
+\end{theorem}
+
+\begin{example}
+    Na raspolaganju imamo 15 crvenih balona, 20 bijelih balona, 10 plavih balona
+    i 30 žutih balona. 72 od tih balona trebamo rasporediti u četiri različite
+    kutije: crvenu, bijelu, plavu i žutu kutiju. Dokažite da
+    \begin{itemize}
+        \item ili crvena kutija sadrži barem 15 balona
+        \item ili bijela kutija sadrži barem 20 balona
+        \item ili plava kutija sadrži barem 10 balona
+        \item ili žuta kutija sadrži barem 30 balona.
+    \end{itemize}
+\end{example}
+
+\subsection{Princip prentinca za golube}
+
+Neka su $m$ i $n$ prirodni brojevi. Neka je $m$ golubova smješteno u $n$
+golubnjaka. Tada vrijedi:
+
+\begin{itemize}
+    \item ako je $m>n$, onda postoji golubnjak u kojemu se nalaze barem dva
+    goluba.
+    \item Ako je $m=n$, onda postoji prazan golubnjak ako i samo ako postoji
+    golubnjak u kojemu su barem dva goluba.
+    \item Ako je $m<n$, onda je barem jedan golubnjak prazan.
+\end{itemize}
+

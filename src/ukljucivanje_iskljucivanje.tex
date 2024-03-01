@@ -1,0 +1,52 @@
+\section{Formula uključivanja i isključivanja}
+
+Neka je $S$ konačan skup te neka su $A$ i $B$ \textbf{disjunktni} podskupovi skupa $S$.
+
+\begin{itemize}
+    \item $|\overline{A}| = |S| - |A|$
+    \item $|A| = |S| - |\overline{A}|$
+    \item $|A \cup B| = |A| + |B|$
+    \item $|A \cap B| = 0$
+    \item $|\overline{A} \cup \overline{B}| = |S|$
+    \item $|\overline{A} \cap \overline{B}| = |\overline{A \cup B}| = |S| - |A \cup B|$
+\end{itemize}
+
+Neka je $S$ konačan skup te neka su $A$ i $B$ podskupovi skupa $S$.
+
+\begin{itemize}
+    \item $|A \cup B| = |A| + |B| - |A \cap B|$
+    \item De Morganovi zakoni:
+    \begin{itemize}
+        \item $\overline{A} \cap \overline{B} = \overline{A \cup B}$
+        \item $\overline{A} \cup \overline{B} = \overline{A \cap B}$
+    \end{itemize}
+    \item $|\overline{A}\cap \overline{B}| = |S| - |A \cup B| = |S| - |A| - |B| + |A \cap B|$
+    \item $|\overline{A}\cup \overline{B}| = |S| - |A \cap B|$
+\end{itemize}
+
+Neka je $S$ konačan skup te neka su $A$, $B$ i $C$ podskupovi skupa $S$.
+
+\begin{itemize}
+    \item $|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A\cap C| - |B \cap C| + |A\cap B \cap C|$
+    \item $|\overline{A}\cap \overline{B} \cap \overline{C}| = |S| - |A \cup B \cup C| = |S| - |A| - |B| - |C| + |A \cap B| + |A \cap C| + |B \cap C| - |A \cap B \cap C|$
+\end{itemize}
+
+\begin{theorem}
+    Neka je $S$ konačan skup i neka su $A_1, \dots, A_n$ podskupovi skupa $S$.
+
+    Tada je
+    $$
+        |A_1 \cup \dots \cup A_n| = \sum_{i\in\mathbb{N}_n} |A_i| - \sum_{\{i,j\}\subseteq\mathbb{N}_n} |A_i \cap A_j| + \sum_{\{i,j,k\}\subseteq\mathbb{N}_n}|A_i\cap A_j \cap A_k| + \dots + (-1)^{n-1} |A_1\cap A_2 \cap \dots \cap A_n|\,.
+    $$
+\end{theorem}
+
+Ta tvrdnja je ekvivalentna tvrdnji:
+
+\begin{theorem}
+    Neka je $S$ konačan skup i neka su $A_1, \dots, A_n$ podskupovi skupa $S$ te neka je $\overline{A_i} = S \backslash A_i,\, i\in [1, n]$.
+
+    Tada je
+    $$
+        |\overline{A_1} \cup \dots \cup \overline{A_n}| = |S| - \sum_{i\in\mathbb{N}_n} |A_i| + \sum_{\{i,j\}\subseteq\mathbb{N}_n} |A_i \cap A_j| + \sum_{\{i,j,k\}\subseteq\mathbb{N}_n}|A_i\cap A_j \cap A_k| + \dots + (-1)^{n} |A_1\cap A_2 \cap \dots \cap A_n|\,.
+    $$
+\end{theorem}

@@ -1,0 +1,22 @@
+\section{Kombinacije}
+
+Neka je $S$ skup od $n$ elemenata i neka je $r\leq n,\,r\in\mathbb{N}_0$.
+Podskup skupa $S$ koji ima $r$ elemenata je \textbf{$r$-kombinacija} skupa $S$
+(ili kombinacija $r$-tog razreda bez ponavljanja skupa od $n$ elemenata).
+
+\subsection{K-kombinacije n-članog skupa}
+
+$\binom{n}{r}$ je oznaka za broj $r$-kombinacija skupa od $n$ elemenata.
+
+\begin{itemize}
+    \item $\binom{0}{0} := 1$
+    \item $\binom{n}{r} := 0,\quad n < r$
+    \item $\binom{0}{r} := 1,\quad r \in \mathbb{N}$
+\end{itemize}
+
+\begin{theorem}
+    Neka je $n \in \mathbb{N}, r \in \mathbb{N}_0$ i $r\leq n$. Tada je
+    $$
+    \binom{n}{r} = \frac{n!}{r!\cdot (n-r)!} = \frac{n\cdot (n-1)\cdot \dots \cdot (n-r+1)}{r!}.
+    $$
+\end{theorem}

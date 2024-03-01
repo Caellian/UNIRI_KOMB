@@ -1,0 +1,133 @@
+\section{Permutacije skupova}
+
+Neka je $S$ skup od $n$ elemenata i neka je $r\leq n$ prirodan broj. Uređena
+$r$-torka $(x_1,x_2,\dots,x_r)$, gdje su $x_1,\dots,x_r$ međusobno različiti
+elementi skupa $S$, je \textbf{$r$-permutacija} skupa $S$ (ili varijacija bez
+ponavljanja $r$-tog razreda skupa od $n$ elemenata).
+
+\begin{example}
+    Za skup $S=\{1,2,3,4,5,6,7\}$, navedi jednu 5-permutaciju.
+\end{example}
+
+Uređena petorka $(7,1,5,3,4)$ je jedna 5-permutacija skupa $S$.
+
+\begin{theorem}
+    Broj injektivnih funkcija skupa od $r$ elemenata u skup od $n$ elemenata
+    jednak je broju $r$-permutacija skupa od $n$ elemenata.
+\end{theorem}
+
+Broj $r$-permutacija skupa veličine $n$ je:
+
+$$
+    P(n, r) =
+    \begin{Bmatrix}
+        0, & n < r\\
+        1, & r = 0\\
+        n \times (n - 1) \times (n - 2) \times \dots \times (n - r + 1), & \text{inače}
+    \end{Bmatrix}
+    = \frac{n!}{(n-r)!}
+$$
+
+Neka je $S$ skup od $n$ elemenata. \textbf{Permutacija} skupa $S$ je
+$n$-permutacija.
+
+Skup od $n$ elemenata se može posložiti na $n!$ različitih načina, tj. u $n!$
+različitih permutacija. Vrijedi:
+
+\begin{gather*}
+    P_n = P(n, n) = n \cdot (n-1) \cdot \dots \cdot 2 \cdot 1 = n!\\
+    0! := 1
+\end{gather*}
+
+\subsection{Leksikografski poredak}
+
+Leksikografski poredak je jednostavan i fleksibilan način za generiranje svih
+permutacija zadanog skupa koji podržava i ponavljajuće vrijednosti.
+
+Funkcionira tako da se svim elementima skupa dodijele težinske vrijednosti te ih
+se redom ispisuje kao u riječniku (iz čega dobiva naziv).
+
+Narayana Pandita je u 14. st. napisao jedan od prvih poznatih algoritama za
+generiranje leksikografskog poretka:
+
+\begin{itemize}
+    \item Pronađi najveći indeks \verb|k| takav da \verb|a[k] < a[k+1]|.
+    \begin{itemize}
+        \item Ako takav indeks ne postoji, radi se o zadnjoj permutaciji.
+    \end{itemize}
+    \item Pronađi najveći indeks \verb|l| veći od \verb|k| takav da \verb|a[k] < a[l]|.
+    \item Zamjeni vrijendosti \verb|a[k]| i \verb|a[l]|.
+    \item Obrni redoslijed elemenata od \verb|a[k+1]| do (i uključujući) zadnji
+    element \verb|a[n]|.
+\end{itemize}
+
+Ova metoda koristi približno 3 usporedbe i 1.5 zamjene po permutaciji,
+amortizirano za cijeli skup, ne računajući inicijalno sortiranje.
+
+\noindent
+Vremenska složenost određivanja leksikografskog poreta je $\mathcal{O}(n\cdot n!)$.
+
+\subsection{Ciklički tip permutacije}
+
+Neka je $k_i$ broj ciklusa duljine $i$ (duljina ciklusa je broj elemenata u ciklusu) permutacije $\pi : \mathbb{N}_n \to \mathbb{N}_n$. Tada kažemo da je permutacija $\pi$ cikličkog tipa $(k_1, k_2, \dots, k_n)$.
+
+\begin{theorem}
+    Broj permutacija skupa od $n$ elemenata cikličkog tipa $(k_1, k_2, \dots,
+    k_n)$ je jednak:
+
+    $$
+        \frac{n!}{1^{k_1}\cdot k_1! \cdot 2^{k_2}\cdot k_2! \cdot \dots \cdot n^{k_n} \cdot k_n!}
+    $$
+\end{theorem}
+
+\subsection{Zadaci}
+
+\begin{example}
+    Koji je leksikografski poredak skupa $\{1, 2, 3, 4\}$?
+\end{example}
+
+\begin{example}
+    Koji je leksikografski poredak skupa $\{A, B, \symbol{"2660}, B\}$?
+\end{example}
+
+\begin{multicols}{4}
+\raggedright
+\noindent
+1. $(A, B, \symbol{"2660}, B)$,\linebreak
+2. $(A, B, B, \symbol{"2660})$,\linebreak
+3. $(A, \symbol{"2660}, B, B)$,\linebreak
+4. $(A, \symbol{"2660}, B, B)$,\linebreak
+5. $(A, B, B, \symbol{"2660})$,\linebreak
+6. $(A, B, \symbol{"2660}, B)$,\linebreak
+
+\columnbreak
+
+\noindent
+7.\quad $(B, A, \symbol{"2660}, B)$,\linebreak
+8.\quad $(B, A, B, \symbol{"2660})$,\linebreak
+9.\quad $(B, \symbol{"2660}, A, B)$,\linebreak
+10. $(B, \symbol{"2660}, B, A)$,\linebreak
+11. $(B, B, A, \symbol{"2660})$,\linebreak
+12. $(B, B, \symbol{"2660}, A)$,
+
+\columnbreak
+
+\noindent
+13. $(\symbol{"2660}, A, B, B)$,\linebreak
+14. $(\symbol{"2660}, A, B, B)$,\linebreak
+15. $(\symbol{"2660}, B, A, B)$,\linebreak
+16. $(\symbol{"2660}, B, B, A)$,\linebreak
+17. $(\symbol{"2660}, B, A, B)$,\linebreak
+18. $(\symbol{"2660}, B, B, A)$,
+
+\columnbreak
+
+\noindent
+19. $(B, A, B, \symbol{"2660})$,\linebreak
+20. $(B, A, \symbol{"2660}, B)$,\linebreak
+21. $(B, B, A, \symbol{"2660})$,\linebreak
+22. $(B, B, \symbol{"2660}, A)$,\linebreak
+23. $(B, \symbol{"2660}, A, B)$,\linebreak
+24. $(B, \symbol{"2660}, B, A)$
+
+\end{multicols}

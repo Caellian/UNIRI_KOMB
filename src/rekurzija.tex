@@ -1,0 +1,169 @@
+\section{Rekurzija}
+
+Rekurzija se pojavljuje kada definicija koncepta ili procesa ovisi o
+jednostavnijoj ili prethodnoj verziji sebe.
+
+U kontekstu matematike, to znači da se funkcija pojavljuje unutar svoje
+definicije.
+
+\subsection{Rekurzivne relacije}
+
+Primjeri rekurzivnih relacija su kule hanoja i fibbonacijevi brojevi.
+
+Fibbonacijevi brojevi:
+$$
+    f_n = \begin{cases}
+        f_{n-1} + f_{n-2},& n > 1\\
+        1,& n \in [0, 1]
+    \end{cases}
+$$
+
+\subsection{Linearne nehomogene rekurzije s konstantnim koeficijentima}
+
+Linearna nehomogena rekurzija s konstantnim koeficijentima reda $r$
+
+$$
+    a_n = c_1a_{n-1}+c_2a_{n-2}+\dots+c_ra_{n-r}+f(n),\, c_r \neq 0,\, n \geq r,\, f: \mathbb{N} \to \mathbb{C}
+$$
+
+Početni uvjeti:
+
+\begin{itemize}
+    \item $a_0$
+    \item $a_1$
+    \item $\vdots$
+    \item $a_{r-1}$
+\end{itemize}
+
+Karakteristična jednadžba pripadne homogene rekurzije:
+$$
+x^r = c_1x^{r-1}+c_2x^{r-2}+\dots+c_r
+$$
+
+Karakteristički korijeni pripadne homogene rekurzije:
+$$
+x_1,x_2,\dots,x_r
+$$
+
+Opće rješenje pripadne homogene rekurzije:
+$$
+a_n^* = \lambda_1x_1^n+\lambda_2x_2^n+\dots+\lambda_rx_r^n
+$$
+
+Partikularno rješenje $a'_n$ nehomogene rekurzije ovisi o funkciji $f(n)$.
+
+Opće rješenje rekurzije: $\displaystyle a_n = a_n^*+a'_n$
+
+\begin{center}
+    \begin{tabular}{c|c}
+        $f(n)$ & $a'_n$ \\
+        \hline
+        $C$ & $A$ \\
+        $Cn$ & $An+B$ \\
+        $P_k(n)$ & $Q_k(n)$ \\
+        $Cb^n$ & $Ab^n$ \\
+        $n^pb^n$ & $b^nQ_p(n)$
+    \end{tabular}
+\end{center}
+
+\begin{example}
+    Riješite rekurzivnu relaciju za rješenje problema Kule Hanoja.
+\end{example}
+
+\begin{example}
+    Riješite rekurziju $a_n = 2a_{n-1}+2^n,\, a_0 = 5$.
+\end{example}
+
+Ako je $f(n) = a^n$ i ako je $a$ karakterističan korijen kratnosti $k$, onda se pripadno partikularno rješenje množi s $n^k$.
+
+\subsection{Linearne homogene rekurzije s konstantnim koeficijentima}
+
+Linearna homogena rekurzija s konstantnim koeficijentima reda $r$
+
+$$
+    a_n = c_1a_{n-1}+c_2a_{n-2}+\dots+c_ra_{n-r},\, c_r \neq 0,\, n \geq r
+$$
+
+Početni uvjeti:
+
+\begin{itemize}
+    \item $a_0$
+    \item $a_1$
+    \item $\vdots$
+    \item $a_{r-1}$
+\end{itemize}
+
+Karakteristična jednadžba:
+$$
+x^r = c_1x^{r-1}+c_2x^{r-2}+\dots+c_r
+$$
+
+Karakteristički korijeni:
+$$
+x_1,x_2,\dots,x_r
+$$
+
+\begin{theorem}
+    Neka su karakteristički korijeni $x_1,x_2,\dots,x_r$ rekurzivne relacije
+    $$
+        a_n = c_1a_{n-1}+c_2a_{n-2}+\dots+c_ra_{n-r},\, c_r \neq 0,\, n \geq r
+    $$
+    međusobno različiti. Tada je opće rješenje rekurzije
+    $$
+        a_n = \lambda_1x_1^n+\lambda_2x_2^n+\dots+\lambda_rx_r^n
+    $$
+\end{theorem}
+
+\begin{example}
+    Odredite opći član Fibbonacijevog niza.
+\end{example}
+
+\begin{theorem}
+    Neka su $x_1,x_2,\dots,x_r$ različiti korijeni rekurzivne relacije
+    $$
+        a_n = c_1a_{n-1}+c_2a_{n-2}+\dots+c_ra_{n-r},\, c_r \neq 0,\, n \geq r\,,
+    $$
+    te neka je $x_i$ korijen kratnosti $v_i, i \in [1, t]$. Tada je partikularno rješenje rekurzije koje odgovara korijenu $x_i, i \in [1, t]$,
+    $$
+        a_n^{(i)} = \lambda_1^{(i)}x_i^n+\lambda_2^{(i)}nx_i^n+\dots+\lambda_{v_i}^{(i)}n^{v_i-1}x_i^n\,,
+    $$
+    a opće rješenje rekurzije je
+    $$
+        a_n = a_n^{(1)}+a_n^{(2)}+\dots+a_n^{(t)}\,.
+    $$
+\end{theorem}
+
+\subsection{Linearni sustavi rekurzija}
+
+\begin{example}
+    Neka su $(a_n)_{n\in\mathbb{N}_0}$ i $(b_n)_{n\in\mathbb{N}_0}$ nizovi za koje vrijedi:
+
+    \begin{gather*}
+        a_{n+1} = c_1a_n+c_2b_n+f_1(n)\,,\\
+        b_{n+1} = c_3a_n+c_4b_n+f_2(n)\,,\\
+        a_0=c_5,\quad b_0=c_6\,.
+    \end{gather*}
+\end{example}
+
+Sustav se metodom eliminacije svodi na linearnu rekurziju s konstantnim
+koeficijentima.
+
+\subsection{Racionalne rekurzije}
+
+$$
+a_{n+1} = \frac{pa_n+q}{ra_n+s},\quad a_0 = a\,.
+$$
+
+Postupak rješavanja:
+
+Neka su $(b_n)_{n\in\mathbb{N}_0}$ i $(c_n)_{n\in\mathbb{N}_0}$ nizovi za koje vrijedi
+\begin{gather*}
+    b_{n+1} = pb_n + qc_n\\
+    c_{n+1} = rb_n + sc_n\\
+    b_0=a,\quad c_0 = 1\,.
+\end{gather*}
+
+Tada je
+$$
+    a_{n+1} = \frac{b_{n+1}}{c_{n+1}} = \frac{pa_n+q}{ra_n+s}\,.
+$$
