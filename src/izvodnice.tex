@@ -19,7 +19,56 @@ Zatvorne formule nekih redova potencija:
     \item $\sum_{n\geq 0} x^n = \frac{1}{1-x}$
     \item $\sum_{n\geq 0} (ax)^n = \frac{1}{1-ax}$
     \item $\sum_{n\geq 0} \binom{-n}{k}(-x)^k = \frac{1}{(1-x)^n}$
+    \item $\sum_{n\geq 0} \frac{x^n}{n!} = e^x$
 \end{itemize}
 
+Koristi se i formula: $\sum_{k=0}^{n}x^k = \frac{1-x^{n+1}}{1-x}$
+
 \subsection{Eksponencijalne funkcije izvodnice}
+
+Neka je $(a_n)_{n \in \mathbb{N}_0}$ niz kompleksnih brojeva.
+
+\textbf{Eksponencijalna funkcija izvodnica} (EFI) niza $(a_n)_{n \in \mathbb{N}_0}$ je formalni red potencija:
+
+$$
+e(t) = a_0+\frac{a_1}{1!}t + \frac{a_2}{2!}t^2 + \dots + \frac{a_n}{n!}t^n + \dots = \sum_{n\geq 0}^ \frac{a_n}{n!}t^n\,.
+$$
+
+Ako je zada funkcija izvodnica $e(t)$, onda je $a_n = e^{(n)}(0)$.
+
+\begin{enumerate}
+    \item Funkcije izvodnice $f(x) = \sum_{n\geq 0}a_nx^n$ i
+    $g(x) = \sum_{n\geq 0}b_nx^n$ su jednake ako i samo ako je
+    $$
+        a_n = b_n\,, \forall n \in \mathbb{N}_0\,.
+    $$
+    \item Zbroj funkcija izvodnica $f(x) = \sum_{n\geq 0} a_nx^n$ i
+    $g(x) = \sum_{n\geq 0}b_nx^n$ je red potencija
+    $$
+        \sum_{n\geq 0} (a_n + b_n)x^n\,.
+    $$
+    \item Zbroj funkcija izvodnica $f(x) = \sum_{n\geq 0} a_nx^n$ i
+    $g(x) = \sum_{n\geq 0}b_nx^n$ je red potencija
+    \begin{align*}
+        \sum_{n\geq 0} c_nx^n\,, \text{gdje je:}\\
+        c_0=a_0b_0\,,\quad c_1 = a_0b_1 + a_1b_0\,,\quad \dots\,,\quad c_n = \sum_{k=0}^n a_kb_{n-k}\,.
+    \end{align*}
+    \item Formalna derivacija funkcije izvodnice $f(x) = \sum_{n\geq 0} a_nx^n$ je red potencija
+    $$
+        \sum_{n\geq 0} (n+1)a_{n+1}x^n\,.
+    $$
+    \item Formalni integral funckije izvodnice $f(x) = \sum_{n\geq 0} a_n x^n$ je red potencija
+    $$
+        \sum_{n\geq 0} \frac{1}{n} a_{n-1}x^n\,.
+    $$
+\end{enumerate}
+
 \subsection{Primjena funkcija izvodnica u kombinatorici}
+
+\begin{example}
+    Primjenom funkcija iznodnica odredite broj $k$-kombinacija skupa od $n$ elemenata.
+\end{example}
+
+\begin{example}
+    Primjenom funkcija izvodnica odredite broj načina na koje se mogu poredati po četiri slova iz riječi $\mathrm{MAMICA}$.
+\end{example}
