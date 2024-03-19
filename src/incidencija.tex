@@ -1,1 +1,93 @@
 \section{Incidencijske strukture}
+
+\textbf{Incidencijska struktura} $\mathcal{D}$ je uređena trojka
+$(\mathcal{P}, \mathcal{B}, \mathcal{I})$, gdje su
+$\mathcal{P}$ i $\mathcal{B}$ neprazni disjunktni skupovi i
+$\mathcal{I} \subseteq \mathcal{P} \times \mathcal{B}$.
+Elementi skupa $\mathcal{P}$ se nazivaju \textbf{točke}, elementi skupa
+$\mathcal{B}$ \textbf{blokovi}, a relacija $\mathcal{I}$
+\textbf{relacija incidencije}.
+
+Broj blokova koji su incidentni s točkom $P$ naziva se \textbf{stupanj točke}
+$P$ i broj točaka koje su incidentne s blokom $x$ naziva se  stupanj bloka $x$.
+
+\bigskip
+\noindent
+Neka je $\mathcal{D} = (\mathcal{P}, \mathcal{B}, \mathcal{I})$ incidencijska
+struktura te neka je $\mathcal{P}' \subseteq \mathcal{P}$,
+$\mathcal{B}' \subseteq \mathcal{B}$,
+$\mathcal{I}' = \mathcal{P}' \times \mathcal{B}'$ i
+$\mathcal{I}' \subseteq \mathcal{I}$. Incidencijska struktura
+$\mathcal{D}' = (\mathcal{P}', \mathcal{B}', \mathcal{I}')$ naziva se
+\textbf{podstruktura} strukture $\mathcal{D}$.
+
+\smallskip
+\noindent
+Neka je $\mathcal{D} = (\mathcal{P}, \mathcal{B}, \mathcal{I})$ incidencijska
+struktura. Struktura $\mathcal{D} = (\mathcal{P}, \mathcal{B}, \mathcal{I}')$,
+gdje je $\mathcal{I}' = \mathcal{P} \times \mathcal{B} - \mathcal{I}$ naziva se
+\textbf{komplementarna struktura} strukture $\mathcal{D}$.
+
+\smallskip
+\noindent
+Konačna incidencijska struktura je \textbf{kvadratna} ako je broj točaka jednak
+broju blokova.
+
+\bigskip
+\noindent
+Neka je $\mathcal{D} = (\mathcal{P}, \mathcal{B}, \mathcal{I})$ konačna
+incidencijska struktura takva da je $|\mathcal{P}| = v i |\mathcal{B}| = b$.
+Označimo elemente skupa $\mathcal{P}$ sa $P_1, \dots, P_v$ i elemente skupa
+$\mathcal{B}$ sa $x1, \dots, xb$. \textbf{Matrica incidencije} incidencijske
+strukture $\mathcal{D}$ je $v \times b$ matrica $\mathbf{M} = (m_{ij})$
+$$
+m_{ij} = \begin{cases*}
+    1, (P_i, x_j) \in \mathcal{I},\\
+    0, (P_i, x_j) \notin \mathcal{I}.
+\end{cases*}
+$$
+
+\noindent
+Neka je $\mathbf{M}$ matrica incidencije strukture $\mathcal{D}$. Matrica
+incidencije komplementarne strukture $\mathcal{D}'$ je
+$\mathbf{J} - \mathbf{M}$, gdje je $\mathbf{J}$ matrica jedinica.
+
+\bigskip
+\noindent
+Neka su $\mathcal{D} = (\mathcal{P}, \mathcal{B}, \mathcal{I})$ i
+$\mathcal{D}' = (\mathcal{P}', \mathcal{B}', \mathcal{I}')$ incidencijske
+strukture.
+
+\noindent
+Bijektivno preslikavanje
+$f: \mathcal{P} \times \mathcal{B} \to \mathcal{P}' \times \mathcal{B}'$ je
+\textbf{izomorfizam} iz $\mathcal{D}$ na $\mathcal{D}'$ ako vrijedi:
+\begin{enumerate}
+    \item $f$ preslikava $\mathcal{P}$ na $\mathcal{P}'$ i $\mathcal{B}$ na $\mathcal{B}'$
+    \item $(P, x) \in \mathcal{I} \Rightarrow (f (P), f (x)) \in I', \forall P \in \mathcal{P}\text{ i }\forall x \in \mathcal{B}$
+\end{enumerate}
+
+Ako je $\mathcal{D}' = \mathcal{D}$, onda se preslikavanje $f$ naziva
+\textbf{automorfizam}.
+
+\subsection{Primjeri incidencijskih struktura}
+
+\begin{itemize}
+    \item dizajni\newline
+    Konačna incidencijska struktura
+    $\mathcal{D} = (\mathcal{P}, \mathcal{B}, \mathcal{I})$ je
+    $t - (v, k, \lambda)$ dizajn ako vrijedi sljedeće:
+    \begin{enumerate}
+        \item $|\mathcal{P}| = v$,
+        \item svaki element skupa $\mathcal{B}$ incidentan je s točno $k$
+        elemenata skupa $\mathcal{P}$,
+        \item svakih $t$ elemenata skupa $\mathcal{P}$ incidentno je s točno
+        $\lambda$ elemenata skupa $\mathcal{B}$.
+    \end{enumerate}
+    \item grafovi\newline
+    Neka je $\mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathcal{I})$ konačna
+    incidencijska struktura. $\mathcal{G}$ je graf ako je svaki element skupa
+    $\mathcal{E}$ incidentan s dva (ne nužno različita) elementa skupa
+    $\mathcal{V}$. Elementi skupa $\mathcal{V}$ se nazivaju vrhovi i elementi
+    skupa $\mathcal{E}$ bridovi.
+\end{itemize}
