@@ -53,9 +53,17 @@ stupca na pascalovom trokutu u rangu jednakom eksponentu ($n=4$).
     \end{align*}
 \end{theorem}
 
-\begin{example}
+\begin{problem}
     Dokažite da je $\displaystyle\sum_{i=0}^{n} \binom{n}{i} = 2^n$.
-\end{example}
+\end{problem}
+
+Koristimo binomni teorem:
+\begin{align*}
+    \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k &= (x+y)^n\\
+    2^n = (1+1)^n &= (x+y)^n \implies x=1,\, y=1\\
+    \\
+    \sum_{k=0}^{n} \binom{n}{k} \cancel{1^{n-k} 1^k} = \sum_{k=0}^{n} \binom{n}{k} &= 2^n
+\end{align*}
 
 \subsection{Vandermondova konvolucija}
 \textbf{Vandermondova konvolucija} se često koristi za kombinatorne dokaze i
@@ -88,12 +96,12 @@ iz grupe od $n$ objekata.
     $$
 \end{corollary}
 
-\begin{example}
+\begin{problem}
     Izračunajte $\displaystyle \binom{25}{0}\binom{27}{20}+\binom{25}{1}\binom{27}{19}+\dots+\binom{25}{19}\binom{27}{1}+\binom{25}{20}\binom{27}{0}$.
-\end{example}
+\end{problem}
 
 $$
-    \binom{25}{0}\binom{27}{20}+\binom{25}{1}\binom{27}{19}+\dots+\binom{25}{19}\binom{27}{1}+\binom{25}{20}\binom{27}{0} = \sum_{k=0}^{20} \binom{15}{k}\binom{27}{20-k} = \binom{27+25}{20} \approx 1.2599 \times 10^{14}
+\binom{25}{0}\binom{27}{20}+\binom{25}{1}\binom{27}{19}+\dots+\binom{25}{19}\binom{27}{1}+\binom{25}{20}\binom{27}{0} = \sum_{k=0}^{20} \binom{15}{k}\binom{27}{20-k} = \binom{27+25}{20}
 $$
 
 
@@ -113,25 +121,11 @@ $$
 \binom{n}{0}<\binom{n}{1}<\dots<\binom{n}{\frac{n-1}{2}} = \binom{n}{\frac{n+1}{2}}>\dots>\binom{n}{n-1}>\binom{n}{n}
 $$
 
-\begin{example}
+\begin{problem}
     $2n - 1$ studenata želi osnovati svoju delegaciju od $k$ studenata. Za $k = 40$ je
     broj mogućih različitih odabira članova delegacije najveći. Odredite $n$.
-\end{example}
+\end{problem}
 
 Zbog unimodalnosti binomnog koeficijenta znamo da gornji broj mora biti jednak
 $k\cdot 2 \pm 1$, jer se radi o neparnom broju studenata te je
 $\dbinom{n}{\frac{n\pm 1}{2}}$ najveći binom. Dakle broj studenata je $79$.
-
-\subsection{Zadaci}
-
-\begin{example}
-    U binomnom razvoju $\left({1\over x} + x\right)^n$ koeficijent drugog člana
-    manji je od koeficijenta trećeg člana za 35. Odredite, ako postoji, član
-    razvoja koji ne sadrži $x$.
-\end{example}
-
-\begin{example}
-    Izračunajte vrijednost Möbiusove funkcije za sve uređene parove elemenata
-    skupa $X=\{1,2,3,5,9,12\}$, ako je uređaj na skupu dan relacijom "biti
-    djeljitelj od".
-\end{example}

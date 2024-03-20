@@ -6,10 +6,8 @@ elementi skupa $S$, je \textbf{$r$-permutacija} skupa $S$ (ili varijacija bez
 ponavljanja $r$-tog razreda skupa od $n$ elemenata).
 
 \begin{example}
-    Za skup $S=\{1,2,3,4,5,6,7\}$, navedi jednu 5-permutaciju.
+    Uređena petorka $(7,1,5,3,4)$ je jedna 5-permutacija skupa $S=\{1,2,3,4,5,6,7\}$.
 \end{example}
-
-Uređena petorka $(7,1,5,3,4)$ je jedna 5-permutacija skupa $S$.
 
 \begin{theorem}
     Broj injektivnih funkcija skupa od $r$ elemenata u skup od $n$ elemenata
@@ -19,7 +17,7 @@ Uređena petorka $(7,1,5,3,4)$ je jedna 5-permutacija skupa $S$.
 Broj $r$-permutacija skupa veličine $n$ je:
 
 $$
-    P(n, r) =
+P(n, r) =
     \begin{Bmatrix}
         0, & n < r\\
         1, & r = 0\\
@@ -67,28 +65,10 @@ amortizirano za cijeli skup, ne računajući inicijalno sortiranje.
 \noindent
 Vremenska složenost određivanja leksikografskog poreta je $\mathcal{O}(n\cdot n!)$.
 
-\subsection{Ciklički tip permutacije}
 
-Neka je $k_i$ broj ciklusa duljine $i$ (duljina ciklusa je broj elemenata u ciklusu) permutacije $\pi : \mathbb{N}_n \to \mathbb{N}_n$. Tada kažemo da je permutacija $\pi$ cikličkog tipa $(k_1, k_2, \dots, k_n)$.
-
-\begin{theorem}[broj permutacija cikličkog tipa]
-    Broj permutacija skupa od $n$ elemenata cikličkog tipa $(k_1, k_2, \dots,
-    k_n)$ je jednak:
-
-    $$
-        \frac{n!}{1^{k_1}\cdot k_1! \cdot 2^{k_2}\cdot k_2! \cdot \dots \cdot n^{k_n} \cdot k_n!}
-    $$
-\end{theorem}
-
-\subsection{Zadaci}
-
-\begin{example}
-    Koji je leksikografski poredak skupa $\{1, 2, 3, 4\}$?
-\end{example}
-
-\begin{example}
+\begin{problem}
     Koji je leksikografski poredak skupa $\{A, B, \symbol{"2660}, B\}$?
-\end{example}
+\end{problem}
 
 \begin{multicols}{4}
 \raggedright
@@ -129,5 +109,60 @@ Neka je $k_i$ broj ciklusa duljine $i$ (duljina ciklusa je broj elemenata u cikl
 22. $(B, B, \symbol{"2660}, A)$,\linebreak
 23. $(B, \symbol{"2660}, A, B)$,\linebreak
 24. $(B, \symbol{"2660}, B, A)$
-
 \end{multicols}
+
+\begin{problem}
+    Koja je po redu u leksikografskom poretku $(2, 3, 1, 4)$ permutacija za skup $\{1, 2, 3, 4\}$?
+\end{problem}
+
+Preskačemo permutacije koje počinju s:
+\begin{itemize}
+    \item $1$: $3!$,
+    \item $21$: $3! + 2!$
+\end{itemize}
+
+Dakle permutacija $(2, 3, 1, 4)$ je 8. po redu u leksikografskom poretku.
+
+\begin{problem}
+    Koja je prethodna, a koja sljedeća permutacija permutaciji $(2, 3, 1, 4)$ iz prethodnog zadatka?
+\end{problem}
+
+Prethodna permutacija je $(2, 1, 4, 3)$.
+Sljedeća permutacija je $(2, 3, 4, 1)$.
+
+\subsection{Ciklički tip permutacije}
+
+Neka je $k_i$ broj ciklusa duljine $i$ (duljina ciklusa je broj elemenata u ciklusu) permutacije $\pi : \mathbb{N}_n \to \mathbb{N}_n$. Tada kažemo da je permutacija $\pi$ cikličkog tipa $(k_1, k_2, \dots, k_n)$.
+
+\begin{theorem}[broj permutacija cikličkog tipa]
+    Broj permutacija skupa od $n$ elemenata cikličkog tipa $(k_1, k_2, \dots,
+    k_n)$ je jednak:
+
+    $$
+        \frac{n!}{1^{k_1}\cdot k_1! \cdot 2^{k_2}\cdot k_2! \cdot \dots \cdot n^{k_n} \cdot k_n!}
+    $$
+\end{theorem}
+
+\begin{problem}
+    Koji je ciklički zapis sljedećih permutacija:
+    \begin{enumerate}
+        \item 415362
+        \item 123465
+    \end{enumerate}
+\end{problem}
+
+\begin{enumerate}
+\item $\displaystyle
+\begin{pmatrix}
+    1&2&3&4&5&6\\
+    4&1&5&3&6&2
+\end{pmatrix} = (143562)
+$
+
+\item $\displaystyle
+\begin{pmatrix}
+    1&2&3&4&5&6\\
+    1&2&3&4&6&5
+\end{pmatrix} = \underbrace{(1)(2)(3)(4)}_{\substack{\mkern-15mu \text{cikluse duljine }1 \mkern-15mu\\ \mkern-20mu \text{ nije potrebno pisati} \mkern-20mu}}(56) = (56)
+$
+\end{enumerate}
