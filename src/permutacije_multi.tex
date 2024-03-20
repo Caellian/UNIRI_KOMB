@@ -7,14 +7,24 @@ ponavljanjem).
 Ako je broj elemenata multiskupa $M$ jednak $n$, onda se $n$-permutacija od $M$
 zove permutacija multiskupa $M$.
 
-\begin{example}
+\begin{problem}
     Koliko ima nenegativnih cijelih brojeva koji imaju pet ili četiri znamenke
-    zakvih da su sve znamenke međusobno različite?
-\end{example}
+    takvih da su sve znamenke međusobno različite?
+\end{problem}
 
-\begin{example}
+\begin{problem}
     Koliko ima nenegativnih cijelih brojeva koji imaju pet ili manje znamenki?
-\end{example}
+\end{problem}
+
+\begin{itemize}
+    \item Prva znamenka ne može biti $0$: $9$
+    \item Sljedećih 0-4 znamenke mogu biti 0-9: $9 \cdot (10^4 + 10^3 + 10^2 + 10^1 + 10^0)$
+    \item Ubrajamo u broj $0$: $9 \cdot (10^4 + 10^3 + 10^2 + 10^1 + 10^0) + 1$
+\end{itemize}
+
+$$
+    9 \cdot \sum_{i=0}^{4}(10^i) + 1
+$$
 
 \subsubsection{Permutacije s beskonačnim kratnostima}
 
@@ -24,21 +34,22 @@ zove permutacija multiskupa $M$.
     multiskupa $M$ jednak $n^r$.
 \end{theorem}
 
+\bigskip
+Permutacije multiskupa $M$ s beskonačnom kratnosti nije moguće prebrojati jer ih
+je beskonačno mnogo.
+
+
 \begin{example}
     Riječ "KOMBINATORIKA" je 13-permutacija multiskupa $M = \{\infty \cdot
     \text{A}, \infty \cdot \text{B}, \dots, \infty \cdot \text{Ž}\}$.
 \end{example}
 
-\begin{example}
+\begin{problem}
     Odredite broj podskupova skupa $S$ od $n$ elemenata upotrebom prethodnog
     teorema.
-\end{example}
+\end{problem}
 
-Multiplicitet svih elemenata $n$ skupa $S$ je jednak $1$ (tj. $m(x) = 1,\, \forall x \in S$). Broj podskupova skupa $S$ je jednak $\sum_{r=0}^{n} n^r = n!\,$.
-
-\bigskip
-Permutacije multiskupa $M$ s beskonačnom kratnosti nije moguće prebrojati jer ih
-je beskonačno mnogo.
+Broj podskupova skupa $S$ je jednak $\sum_{r=0}^{n} n^r\,$.
 
 \subsubsection{Permutacije s konačnim kratnostima}
 
@@ -51,17 +62,21 @@ je beskonačno mnogo.
     $$
 \end{theorem}
 
+\bigskip
+$r$-permutacije (i permutacije) konačnog multiskupa $M$ je moguće prebrojati jer
+multiskup ima konačan broj elemenata.
+
 \begin{example}
     Riječ "KOMBINATORIKA" je permutacija multiskupa $M = \{2 \cdot \text{A}, 2
     \cdot \text{K}, 2 \cdot \text{O}, 2 \cdot \text{I}, 1 \cdot \text{M}, 1
     \cdot \text{B}, 1 \cdot \text{N}, 1 \cdot \text{T}, 1 \cdot \text{R} \}$.
 \end{example}
 
-\begin{example}
+\begin{problem}
     Koliko ima permutacija skupa $M = \{2 \cdot \text{A}, 2 \cdot \text{K}, 2
     \cdot \text{O}, 2 \cdot \text{I}, 1 \cdot \text{M}, 1 \cdot \text{B}, 1
     \cdot \text{N}, 1 \cdot \text{T}, 1 \cdot \text{R} \}$?
-\end{example}
+\end{problem}
 
 Multiskup $M$ ima
 $
@@ -69,6 +84,21 @@ $
 $
 permutacija.
 
-\bigskip
-$r$-permutacije (i permutacije) konačnog multiskupa $M$ je moguće prebrojati jer
-multiskup ima konačan broj elemenata.
+\begin{problem}
+    Koliko ima 6-znamenkastih brojeva koji se sastoje od 3 znamenke 1 i 3
+    znamenke 2?
+\end{problem}
+
+Na $6$ mjesta možemo smjestiti prvu $1$, sljedeću na $5$, te zadnju na $4$. Na
+preostala $3$ mjesta mora ići znamenka $2$. Tako da se radi o $6\cdot 5\cdot 4$
+načina.
+
+No svaki od tih $6\cdot 5\cdot 4$ brojeva možemo postići tako što različitim
+redoslijedom smjestimo brojeve na ista mjesta. Na 3 pozicije možemo smjestiti
+istu vrijednost na $3!$ načina.
+
+Dakle $6\cdot 5\cdot 4$ broj načina je $3!$ puta manji:
+$$
+\frac{6\cdot 5\cdot 4}{3!}
+$$
+

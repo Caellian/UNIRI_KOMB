@@ -1,12 +1,10 @@
-\section{Rekurzija}
-
 Rekurzija se pojavljuje kada definicija koncepta ili procesa ovisi o
 jednostavnijoj ili prethodnoj verziji sebe.
 
 U kontekstu matematike, to znači da se funkcija pojavljuje unutar svoje
 definicije.
 
-\subsection{Rekurzivne relacije}
+\section{Rekurzivne relacije}
 
 Primjeri rekurzivnih relacija su kule hanoja i fibbonacijevi brojevi.
 
@@ -18,22 +16,18 @@ $$
     \end{cases}
 $$
 
-\subsection{Linearne nehomogene rekurzije s konstantnim koeficijentima}
+\section{Linearne nehomogene rekurzije s konstantnim koeficijentima}
 
 Linearna nehomogena rekurzija s konstantnim koeficijentima reda $r$
 
 $$
-    a_n = c_1a_{n-1}+c_2a_{n-2}+\dots+c_ra_{n-r}+f(n),\, c_r \neq 0,\, n \geq r,\, f: \mathbb{N} \to \mathbb{C}
+a_n = c_1a_{n-1}+c_2a_{n-2}+\dots+c_ra_{n-r}+f(n),\, c_r \neq 0,\, n \geq r,\, f: \mathbb{N} \to \mathbb{C}
 $$
 
 Početni uvjeti:
-
-\begin{itemize}
-    \item $a_0$
-    \item $a_1$
-    \item $\vdots$
-    \item $a_{r-1}$
-\end{itemize}
+$$
+a_0,\, a_1,\, \dots,\, a_{r-1}
+$$
 
 Karakteristična jednadžba pripadne homogene rekurzije:
 $$
@@ -76,7 +70,7 @@ Opće rješenje rekurzije: $\displaystyle a_n = a_n^*+a'_n$
 
 Ako je $f(n) = a^n$ i ako je $a$ karakterističan korijen kratnosti $k$, onda se pripadno partikularno rješenje množi s $n^k$.
 
-\subsection{Linearne homogene rekurzije s konstantnim koeficijentima}
+\section{Linearne homogene rekurzije s konstantnim koeficijentima}
 
 Linearna homogena rekurzija s konstantnim koeficijentima reda $r$
 
@@ -85,13 +79,9 @@ $$
 $$
 
 Početni uvjeti:
-
-\begin{itemize}
-    \item $a_0$
-    \item $a_1$
-    \item $\vdots$
-    \item $a_{r-1}$
-\end{itemize}
+$$
+a_0,\, a_1,\, \dots,\, a_{r-1}
+$$
 
 Karakteristična jednadžba:
 $$
@@ -133,7 +123,7 @@ $$
     $$
 \end{theorem}
 
-\subsection{Linearni sustavi rekurzija}
+\section{Linearni sustavi rekurzija}
 
 \begin{example}
     Neka su $(a_n)_{n\in\mathbb{N}_0}$ i $(b_n)_{n\in\mathbb{N}_0}$ nizovi za koje vrijedi:
@@ -148,7 +138,7 @@ $$
 Sustav se metodom eliminacije svodi na linearnu rekurziju s konstantnim
 koeficijentima.
 
-\subsection{Racionalne rekurzije}
+\section{Racionalne rekurzije}
 
 $$
 a_{n+1} = \frac{pa_n+q}{ra_n+s},\quad a_0 = a\,.

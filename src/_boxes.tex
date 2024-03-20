@@ -34,8 +34,8 @@
 \NewDocumentEnvironment{definition}{ o +b }{
     \refstepcounter{definitioncounter} 
     \IfValueTF{#1}
-        {\begin{borderbox}{\faInfoCircle}{Definicija \thedefinitioncounter: #1}{colordefinitionfg}{colordefinitionbg}}
-        {\begin{borderbox}{\faInfoCircle}{Definicija \thedefinitioncounter}{colordefinitionfg}{colordefinitionbg}}
+        {\begin{borderbox}{\faBookmark}{Definicija \thedefinitioncounter: #1}{colordefinitionfg}{colordefinitionbg}}
+        {\begin{borderbox}{\faBookmark}{Definicija \thedefinitioncounter}{colordefinitionfg}{colordefinitionbg}}
     #2
 }{
     \end{borderbox}
@@ -45,8 +45,8 @@
 \NewDocumentEnvironment{theorem}{ o +b }{
     \refstepcounter{theoremcounter} 
     \IfValueTF{#1}
-        {\begin{borderbox}{\faInfoCircle}{Teorem \thetheoremcounter: #1}{colordefinitionfg}{colordefinitionbg}}
-        {\begin{borderbox}{\faInfoCircle}{Teorem \thetheoremcounter}{colordefinitionfg}{colordefinitionbg}}
+        {\begin{borderbox}{\faCheckCircle}{Teorem \thetheoremcounter: #1}{colordefinitionfg}{colordefinitionbg}}
+        {\begin{borderbox}{\faCheckCircle}{Teorem \thetheoremcounter}{colordefinitionfg}{colordefinitionbg}}
     #2
 }{
     \end{borderbox}
@@ -63,13 +63,13 @@
     \end{borderbox}
 }
 
-\definecolor{colorwarningbg}{HTML}{FCE7BE}
-\definecolor{colorwarningfg}{HTML}{F3A70C}
+\definecolor{colorproblembg}{HTML}{FCD8C5}
+\definecolor{colorproblemfg}{HTML}{F13B0E}
 
-\NewDocumentEnvironment{warning}{ o +b }{
+\NewDocumentEnvironment{problem}{ o +b }{
     \IfValueTF{#1}
-        {\begin{borderbox}{\faWarning}{Oprez: #1}{colorwarningfg}{colorwarningbg}}
-        {\begin{borderbox}{\faWarning}{Oprez}{colorwarningfg}{colorwarningbg}}
+        {\begin{borderbox}{\faCogs}{Zadatak: #1}{colorproblemfg}{colorproblembg}}
+        {\begin{borderbox}{\faCogs}{Zadatak}{colorproblemfg}{colorproblembg}}
     #2
 }{
     \end{borderbox}

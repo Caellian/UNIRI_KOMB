@@ -1,3 +1,6 @@
+# Editor settings
+.vscode
+
 # Tectonic build files
 /build
 

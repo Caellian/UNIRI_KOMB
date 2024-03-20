@@ -1,7 +1,7 @@
 \section{Binomni koeficijent}
 
-Izražava na koliko se načina može odabrati k od n odabira bez ponavljanja, tj.
-broj $k$-kombinacija $n$-članog skupa.
+Izražava na koliko se načina može odabrati $k$ od $n$ odabira bez ponavljanja,
+tj. broj $k$-kombinacija $n$-članog skupa.
 
 $$
 \binom{n}{k} = \frac{n!}{(n-k)!k!}
@@ -45,7 +45,7 @@ U primjeru možemo uočiti da koeficijent $a$ svakog člana prati vrijednosti
 stupca na pascalovom trokutu u rangu jednakom eksponentu ($n=4$).
 
 \begin{theorem}[binomni teorem]
-    Neka je $n$ prirodan broj i neka su $x$ i $y$ kompleksni brojevi. Tada je
+    Neka je $n$ prirodan broj i neka su $x$ i $y$ kompleksni brojevi. Tada je:
 
     \begin{align*}
         (x+y)^n &= x^n + \binom{n}{1}x^{n-1}y+\dots+\binom{n}{n-1}xy^{n-1}+y^n\\
@@ -58,8 +58,8 @@ stupca na pascalovom trokutu u rangu jednakom eksponentu ($n=4$).
 \end{example}
 
 \subsection{Vandermondova konvolucija}
-\textbf{Vandermondova konvolucija} se često koristi za kombinatorne dokaze i rješavanje
-sustava jednadžbi u linearnoj algebri.
+\textbf{Vandermondova konvolucija} se često koristi za kombinatorne dokaze i
+rješavanje sustava jednadžbi u linearnoj algebri.
 
 Primjenjuje se za brojanje kombinacija različitih objekata. Izraz
 $$
@@ -99,6 +99,9 @@ $$
 
 \subsection{Unimodalnost}
 
+Unimodalnost je svojstvo koje nam govori da postoji samo jedna najveća/najmanja
+vrijednost za neki matematički objekt.
+
 Ako je $n$ paran prirodan broj vrijedi:
 $$
 \binom{n}{0}<\binom{n}{1}<\dots<\binom{n}{\frac{n}{2}},\, \binom{n}{\frac{n}{2}}>\dots>\binom{n}{n-1}>\binom{n}{n}
@@ -109,7 +112,6 @@ Ako je $n$ neparan prirodan broj vrijedi:
 $$
 \binom{n}{0}<\binom{n}{1}<\dots<\binom{n}{\frac{n-1}{2}} = \binom{n}{\frac{n+1}{2}}>\dots>\binom{n}{n-1}>\binom{n}{n}
 $$
-
 
 \begin{example}
     $2n - 1$ studenata želi osnovati svoju delegaciju od $k$ studenata. Za $k = 40$ je

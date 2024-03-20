@@ -1,17 +1,49 @@
-\section{Uvod}
+\section{Funkcija}
 
 \begin{definition}[funkcija]
-    \textbf{Funkcija} $f: S \to T$ je izraz ili pravilo kojim se svakom elementu skupa S
-    pridružuje točno 1 element skupa T.
+    \textbf{Funkcija} $f: X \to Y$ je izraz ili pravilo kojim se svakom elementu
+    skupa X (\textit{domene}) pridružuje točno 1 element skupa Y
+    (\textit{kodomene}).
+
+    $$
+        \forall x \in X,\, \exists! y \in Y \text{ takav da je } y = f(x)
+    $$
 \end{definition}
 
-\subsection{Matematička logika}
+\begin{definition}[injecija]
+    Funkcija $f$ je \textbf{injecija} ako svakom elementu iz kodomene pridružuje
+    \textit{najviše} jedan element iz domene.
 
-\begin{definition}
+    $$
+        \forall x,\, x' \in X,\, f(x) = f(x') \implies x = x'
+    $$
+\end{definition}
+
+\begin{definition}[surjecija]
+    Funkcija $f$ je \textbf{surjecija} ako svakom elementu kodomene pridružuje
+    \textit{najmanje} jedan element iz domene.
+
+    $$
+        \forall y \in Y,\, \exists x \in X \text{ takav da je } y = f(x)
+    $$
+\end{definition}
+
+\begin{definition}[bijekcija]
+    Funkcija $f$ je \textbf{bijekcija} ako svakom elementu iz kodomene pridružuje
+    \textit{točno} jedan element iz domene.
+
+    $$
+        \forall y \in Y,\, \exists! x \in X \text{ takav da je } y = f(x)
+    $$
+\end{definition}
+
+\section{Matematička logika}
+
+\begin{definition}[sud]
     \textbf{Sud} (ili \textbf{izjava}) je smislena tvrdnja koja je ili istinita ili lažna.
 \end{definition}
 
-\subsubsection{Operacija nad sudovima}
+\subsection{Operacije nad sudovima}
 
 \begin{tabular}{c|lr}
     $\neg$ & negacija &\\
@@ -22,9 +54,9 @@
     $\Leftrightarrow$ & ekvivalencija &\\
 \end{tabular}
 
-\subsection{Skupovi}
+\section{Skupovi}
 
-\begin{definition}
+\begin{definition}[skup]
     \textbf{Skup}\index{Skup} je grupacija $n$ međusobno različitih elemenata.
     
     Skup može biti konačan ili beskonačan.
@@ -43,7 +75,7 @@ Skup\index{Skup} može biti zadan...
 
 Duljinu skupa označavamo vertikalnim linijama: $|S|$
 
-\subsubsection{Učestali skupovi}
+\subsection{Učestali skupovi}
 
 \begin{table}[ht]
     \center
@@ -100,10 +132,9 @@ Duljinu skupa označavamo vertikalnim linijama: $|S|$
 \end{table}
 \newpage
 
-\subsubsection{Operacije nad skupovima}
+\subsection{Operacije nad skupovima}
 
-\noindent
-\textbf{Unija skupova}
+\subsubsection{Unija skupova}
 
 Unija je operacija koja vraća skup koji sadrži sve članove operanada. 
 
@@ -122,8 +153,7 @@ Primjeri:
     \{\{1, 8\}, \{3, 5\}\} \cup \{\emptyset, \{1, 8\}, \{6, 9\}\} = \{\emptyset,\{1, 8\}, \{3, 5\}, \{6, 9\}\} \\
 \end{gather*}
 
-\noindent
-\textbf{Presjek skupova}
+\subsubsection{Presjek skupova}
 
 Presjek je operacija koja vraća skup koji sadrži isključivo članove sadržane u svim operandima. 
 
@@ -142,10 +172,9 @@ Primjeri:
     \{\{1, 8\}, \{3, 5\}\} \cap \{\emptyset, \{1, 8\}, \{6, 9\}\} = \{\{1, 8\}\} \\
 \end{gather*}
 
-\noindent
-\textbf{Komplement/razlika skupova}
+\subsubsection{Razlika skupova}
 
-Komplement nije komutativan.
+Razlika nije komutativna.
 
 $$
 S_1 \backslash S_2 = \{x: x \in S_1 \land x \notin S_2\}
@@ -160,13 +189,12 @@ Primjeri:
     \{\{1, 8\}, \{3, 5\}\} \backslash \{\{\}, \{1, 8\}, \{6, 9\}\} = \{\{3, 5\}\} \\
 \end{gather*}
 
-\noindent
-\textbf{Kartezijev produkt skupova}
+\subsubsection{Kartezijev produkt skupova}
 
 Kartezijev produkt je komutativan.
 
 $$
-S_1 \times S_2 = \{(a, b): a \in S_1 \and b \in S_2\}
+S_1 \times S_2 = \{(a, b): a \in S_1 \wedge b \in S_2\}
 $$
 
 Primjeri:
@@ -177,8 +205,7 @@ Primjeri:
     \{\emptyset\} \times \{1, 2\} = \{(\emptyset, 1), (\emptyset, 2)\} \\
 \end{gather*}
 
-\noindent
-\textbf{Simetrična razlika skupova}
+\subsubsection{Simetrična razlika skupova}
 
 Simetrična razlika skupova je unija svih skupova bez njihovih presjeka.
 
@@ -186,8 +213,7 @@ $$
 S_1 \triangle S_2 = (S_1 \backslash S_2) \cup (S_2 \backslash S_1)
 $$
 
-\noindent
-\textbf{Komplement skupa}
+\subsubsection{Komplement skupa}
 
 Komplement skupa sadrži sve elemente univerzalnog skupa koji nisu sadržani u komplementiranom skupu.
 
@@ -195,8 +221,7 @@ $$
 \overline{S} = \{x \in U: x \notin S\}
 $$
 
-\noindent
-\textbf{Partitivni skup}
+\subsubsection{Partitivni skup}
 
 Parititivni skup $\mathbf{P}(S)$ skupa $S$ je skup svih podskupova skupa $S$.
 
@@ -206,7 +231,7 @@ Primjer:
     \mathrm{P}(S) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1,2,3\}\}
 \end{gather*}
 
-\subsection{Veza između logike, algebre i skupova}
+\section{Veza između logike, algebre i skupova}
 
 \begin{center}
     \begin{multicols}{2}
